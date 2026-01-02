@@ -1,0 +1,72 @@
+[
+  {
+    "id": 0,
+    "img": "/image/img-1.png",
+    "Title": "Sports shirt",
+    "price": "$10",
+    "description": "A sports shirt designed to provide comfort during exercise or sporting activities. Made from high-quality breathable materials."
+  },
+  {
+    "id": 1,
+    "img": "/image/img-2.png",
+    "Title": "Mountain pants",
+    "price": "$15",
+    "description": "Perfect mountain pants for outdoor adventures. Provides protection and comfort during mountain trips."
+  },
+  {
+    "id": 2,
+    "img": "/image/img-3.png",
+    "Title": "Mountain shoes",
+    "price": "$20",
+    "description": "A strong mountain shoe designed to offer support while walking on rough terrains. Ensures foot comfort and stability."
+  },
+  {
+    "id": 3,
+    "img": "/image/img-4.png",
+    "Title": "The bag",
+    "price": "$50",
+    "description": "A durable and practical travel bag with a modern design. Perfect for long trips and outdoor activities."
+  },
+  {
+    "id": 4,
+    "img": "/image/img-5.png",
+    "Title": "Headphones",
+    "price": "$25",
+    "description": "High-quality headphones providing an excellent sound experience. Comfortable design for long wear."
+  },
+  {
+    "id": 5,
+    "img": "/image/img-6.png",
+    "Title": "Glasses",
+    "price": "$10",
+    "description": "Trendy sunglasses that offer protection from harmful rays. A design that suits all styles."
+  },
+  {
+    "id": 6,
+    "img": "/image/img-7.png",
+    "Title": "Tent",
+    "price": "$60",
+    "description": "Weather-resistant tent offering shelter for camping adventures. Quick setup and ideal for long trips."
+  },
+  {
+    "id": 7,
+    "img": "/image/img-8.png",
+    "Title": "Sports shoes",
+    "price": "$20",
+    "description": "Comfortable sports shoes ideal for exercise and long-distance walking. Provides exceptional foot support."
+  },
+  {
+    "id": 8,
+    "img": "/image/img-9.png",
+    "Title": "Pack Mountain",
+    "price": "$200",
+    "description": "A multi-use mountain backpack, designed to carry heavy gear during hiking trips in mountainous areas."
+  },
+  {
+    "id": 9,
+    "img": "/image/img-10.png",
+    "Title": "Sports bottle",
+    "price": "$5",
+    "description": "A practical sports bottle to keep you hydrated during workouts or outdoor adventures. Lightweight and reusable design."
+  }
+]
