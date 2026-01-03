@@ -24,12 +24,12 @@ export default function CardProduct() {
           className="w-full md:w-[26%] shadow-lg rounded-lg p-4 flex flex-col items-center hover:scale-105 transition duration-200 cursor-pointer"
         >
           <Link to={`/product/${data.id}`}>
-            <img src={data.img} alt={data.Title} className="w-[70%] m-auto" />
+            <img src={data.img} alt={data.Title} className="w-[70%] m-auto" loading="lazy" />
             <div className="p-2 flex flex-col items-center justify-center">
               <div className="w-full">
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold">{data.Title}</h3>
-                  <span className="text-sm text-red-600">{data.price}</span>
+                  <span className="text-sm text-red-600">${data.price}</span>
                 </div>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">{data.description}</p>
