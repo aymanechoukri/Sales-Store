@@ -11,12 +11,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { motion as M, AnimatePresence } from "framer-motion";
+import Headers from "./Headers";
 
 export default function CartPage() {
   const { cart, removeCart, positifQuntity, nigatifQuntity } = useCart();
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
+    <>
+    <Headers />
     <div className="min-h-screen bg-gray-50 p-4 md:p-6 lg:p-8">
       <ToastContainer />
       <div className="max-w-7xl mx-auto">
@@ -45,7 +48,12 @@ export default function CartPage() {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center">
           <div className="lg:w-2/3">
             {cart.length === 0 ? (
-              <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
+              <M.div
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 1 }}
+                className="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center"
+              >
                 <div className="inline-flex items-center justify-center w-24 h-24 bg-gray-100 rounded-full mb-6">
                   <FontAwesomeIcon
                     icon={faShoppingCart}
@@ -64,7 +72,7 @@ export default function CartPage() {
                 >
                   Browse Products
                 </Link>
-              </div>
+              </M.div>
             ) : (
               <AnimatePresence>
                 <M.div
@@ -225,5 +233,6 @@ export default function CartPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
