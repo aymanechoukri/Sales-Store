@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CartContext } from "./CreatContext";
+import { CartContext } from "./CartContext";
 
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
@@ -35,7 +35,7 @@ export default function CartProvider({ children }) {
     setCart(cart.filter((item) => item.id !== id));
   }
 
-  function nigatifQuntity(id) {
+  function decrementQuantity(id) {
     setCart((prev) =>
       prev.map((item) =>
         item.id === id && item.quantity > 1
@@ -45,7 +45,7 @@ export default function CartProvider({ children }) {
     );
   }
 
-  function positifQuntity(id) {
+  function incrementQuantity(id) {
     setCart((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -55,7 +55,7 @@ export default function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ addCart, cart, removeCart, positifQuntity, nigatifQuntity }}
+      value={{ addCart, cart, removeCart, decrementQuantity, incrementQuantity }}
     >
       {children}
     </CartContext.Provider>

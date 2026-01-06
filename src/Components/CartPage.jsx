@@ -1,4 +1,4 @@
-import { useCart } from "../Context/CreatContext";
+import { useCart } from "../Context/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastContainer, toast } from "react-toastify";
 import {
@@ -12,9 +12,10 @@ import {
 import { Link } from "react-router-dom";
 import { motion as M, AnimatePresence } from "framer-motion";
 import Headers from "./Headers";
+import Footer from "./Footer";
 
 export default function CartPage() {
-  const { cart, removeCart, positifQuntity, nigatifQuntity } = useCart();
+const { cart, removeCart, incrementQuantity, decrementQuantity } = useCart();
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
@@ -126,7 +127,7 @@ export default function CartPage() {
                               <div className="flex items-center">
                                 <div className="flex items-center border border-gray-300 rounded-lg">
                                   <button
-                                    onClick={() => nigatifQuntity(data.id)}
+onClick={() => decrementQuantity(data.id)}
                                     className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 hover:text-red-600 transition-colors"
                                   >
                                     <span className="text-xl font-bold">−</span>
@@ -135,7 +136,7 @@ export default function CartPage() {
                                     {data.quantity}
                                   </span>
                                   <button
-                                    onClick={() => positifQuntity(data.id)}
+onClick={() => incrementQuantity(data.id)}
                                     className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 hover:text-green-600 transition-colors"
                                   >
                                     <span className="text-xl font-bold">+</span>
@@ -233,6 +234,7 @@ export default function CartPage() {
         </div>
       </div>
     </div>
+    <Footer />
     </>
   );
 }

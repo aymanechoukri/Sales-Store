@@ -8,32 +8,28 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const Go = useNavigate()
+const navigate = useNavigate();
 
   const { user } = useAuth();
-  console.log(user);
 
-  function handlSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
-    // Validate input fields first
     if (email === "" || password === "") {
       return;
     }
 
-    // Check if user array exists and has registered users
     if (!user || !Array.isArray(user) || user.length === 0) {
       toast("No registered users found. Please create an account first.");
       return;
     }
 
-    // Find a user with matching email and password
     const matchedUser = user.find(
       (u) => u.email === email && u.password === password
     );
 
-    if (matchedUser) {
-      Go("/");
+if (matchedUser) {
+      navigate("/");
       window.localStorage.setItem("email", email)
     } else {
       toast("Invalid email or password. Please try again.");
@@ -43,8 +39,8 @@ export default function Login() {
     <div>
       <Headers />
       <ToastContainer />
-      <form
-        onSubmit={handlSubmit}
+<form
+        onSubmit={handleSubmit}
         className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-200 mt-10"
       >
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">

@@ -9,22 +9,19 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const Go = useNavigate();
+const navigate = useNavigate();
 
   const { setUser, user } = useAuth();
-  console.log(user);
 
-  function handlSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
-    // Validate input fields first
     if (name === "" || email === "" || password === "") {
       return;
     }
 
     const currentUsers = user || [];
     
-    // Check if email already exists BEFORE adding new user
     const validEmail = currentUsers.find(u => u.email === email);
 
     if (validEmail) {
@@ -32,21 +29,19 @@ export default function Register() {
       return;
     }
 
-    // Only add user after validation passes
     const newUser = { name, email, password };
     const updatedUsers = [...currentUsers, newUser];
-    setUser(updatedUsers);
+setUser(updatedUsers);
 
-    // Navigate to home - AuthProvider handles localStorage persistence
-    Go("/");
+    navigate("/");
     window.localStorage.setItem("email", email)
   }
   return (
     <div>
       <ToastContainer />
       <Headers />
-      <form
-        onSubmit={handlSubmit}
+<form
+        onSubmit={handleSubmit}
         className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-200 mt-10"
       >
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">

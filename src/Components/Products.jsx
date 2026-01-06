@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { motion as M } from "framer-motion";
-import { useCart } from "../Context/CreatContext";
+import { useCart } from "../Context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import Headers from "./Headers";
+import Footer from "./Footer";
 
 export default function Products() {
-  const { addCart, cart } = useCart();
-  console.log(cart);
+  const { addCart } = useCart();
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -94,6 +94,7 @@ export default function Products() {
           </M.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

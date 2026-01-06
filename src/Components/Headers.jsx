@@ -15,8 +15,8 @@ import { useState } from "react";
 export default function Headers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function deletUser() {
-    window.localStorage.removeItem("email")
+function deleteUser() {
+    window.localStorage.removeItem("email");
   }
 
   return (
@@ -81,7 +81,21 @@ export default function Headers() {
               <span className="hidden sm:inline">Log in</span>
             </Link>
           </> : 
-          <Link className="inline-flex items-center space-x-2 px-4 md:px-5 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors" to={"/register"} onClick={deletUser}>Log out</Link>
+<>
+            <Link
+              className="inline-flex items-center space-x-2 px-4 md:px-5 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              to={"/register"}
+              onClick={deleteUser}
+            >
+              Log out
+            </Link>
+            <Link
+              to={"/dashboard"}
+              className="hidden md:inline-flex items-center space-x-2 px-4 md:px-5 py-2 text-blue-600 font-semibold border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              Dashboard
+            </Link>
+          </>
           }
         </div>
       </nav>

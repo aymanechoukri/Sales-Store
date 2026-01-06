@@ -14,7 +14,7 @@ export default function Content() {
           className="relative bg-cover bg-center min-h-[400px] md:min-h-[500px]"
           style={{ backgroundImage: "url('/image/header.png')" }}
         >
-          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent"></div>
+<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
           <div className="relative container mx-auto px-6 h-full flex items-center">
             <div className="max-w-2xl text-white py-12">
